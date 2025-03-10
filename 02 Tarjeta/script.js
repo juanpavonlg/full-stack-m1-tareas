@@ -7,7 +7,8 @@ const tarjeta = document.querySelector(".tarjeta"); // obteber una referencia a 
 verDetallesButton.addEventListener("click", () => {
   tarjeta.children[0].style.transform = "rotateY(180deg)"; // rotar la cara frontal
   tarjeta.children[1].style.transform = "rotateY(360deg)"; // rotar la cara posterior de manera invertida
-  setTimeout(() => { // resetear las tranformaciones para ambas caras después de 4 segundos
+  setTimeout(() => {
+    // resetear las tranformaciones para ambas caras después de 4 segundos
     tarjeta.children[0].style.transform = "";
     tarjeta.children[1].style.transform = "";
   }, 4000);
@@ -17,8 +18,9 @@ verDetallesButton.addEventListener("click", () => {
 // Función para volver a la cara frontal
 volverButton.addEventListener("click", () => {
   tarjeta.children[0].style.transform = "rotateY(0deg)"; // rotar la cara frontal a su posición original
-  tarjeta.children[1].style.transform = "rotateY(180deg)" // rotar la cara posterior a su posición original
-  setTimeout(() => { // resetear las tranformaciones para ambas caras después de 4 segundos
+  tarjeta.children[1].style.transform = "rotateY(180deg)"; // rotar la cara posterior a su posición original
+  setTimeout(() => {
+    // resetear las tranformaciones para ambas caras después de 4 segundos
     tarjeta.children[0].style.transform = "";
     tarjeta.children[1].style.transform = "";
   }, 4000);
