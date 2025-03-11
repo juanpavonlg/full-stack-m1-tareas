@@ -1,0 +1,63 @@
+.container {
+  text-align: center; /* alinear los elementos al centro */
+  font-family: Arial, sans-serif;
+}
+
+.empleado-card {
+  border: 2px solid #ccc; /* borde solido para la tarjeta de empleado */
+  padding: 10px; /* relleno */
+  margin: 10px; /* margen */
+  display: inline-block; /* mostrar como bloque en línea */
+  width: 250px; /* ancho */
+  border-radius: 5px; /* esquinas redondeadas */
+  text-align: center; /* alinear el texto al centro */
+  transition: background-color 0.3s, color 0.3s; /* animaciones de transición */
+}
+
+/* Estilos para empleados activos */
+.empleado-card.activo {
+  background-color: #d4edda; /* Verde claro */
+  border-color: #28a745; /* color del borde */
+  color: #155724; /* color del texto */
+}
+
+/* Estilos para empleados inactivos */
+.empleado-card.inactivo {
+  background-color: #f8d7da; /* Rojo claro */
+  border-color: #dc3545; /* color del borde */
+  color: #721c24; /* color del texto */
+}
+
+/* Estado Activo e Inactivo (Texto) */
+.estado-activo {
+  color: #28a745; /* color del texto */
+  font-weight: bold; /* negrita */
+}
+
+.estado-inactivo {
+  color: #dc3545; /* color del texto */
+  font-weight: bold; /* negrita */
+}
+
+/* Botón de cambiar estado */
+.cambiar-estado-btn {
+  padding: 5px 10px; /* relleno */
+  margin-top: 5px; /* margen superior */
+  cursor: pointer; /* cursor con forma de puntero */
+  border: none; /* sin borde */
+  border-radius: 5px; /* esquinas redondeadas */
+  background-color: #007bff; /* color de fondo */
+  color: white; /* color del texto */
+}
+
+/* Cambiar el color de fondo cuando el mouse pasa sobre el botón */
+.cambiar-estado-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el selector */
+select {
+  padding: 5px; /* relleno */
+  margin: 10px; /* margen */
+  font-size: 16px; /* tamaño de la fuente */
+}
