@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "H1dr0g3n7",
+    "database": "sequelize",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "H1dr0g3n7",
+    "database": "mi_base_de_datos_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "H1dr0g3n7",
+    "database": "mi_base_de_datos_prod",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
