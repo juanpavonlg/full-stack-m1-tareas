@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
@@ -16,7 +16,7 @@ const RegisterForm = () => {
       await axios.post(
         "https://tasks-smil.onrender.com/api/auth/register",
         { name, email, password },
-        // { withCredentials: true }
+        { withCredentials: true }
       );
       alert("Usuario registrado con éxito");
       navigate("/");
@@ -26,7 +26,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Registro</h2>
       <form onSubmit={handleRegister}>
         <input

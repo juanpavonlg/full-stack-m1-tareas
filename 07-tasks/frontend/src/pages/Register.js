@@ -1,10 +1,11 @@
-import RegisterForm from "../components/RegisterForm"
+import RegisterForm from "../components/RegisterForm";
+import "../styles/App.css";
 
 const Register = () => {
   return (
-    <div className="register-contanier">
+    <div className="container">
       <h1>Registrar</h1>
-      <div className="register-form">
+      <div className="form">
         <RegisterForm />
       </div>
     </div>

@@ -1,28 +1,33 @@
-// import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = () => {
-  // const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(null);
     try {
-      // await login(email, password);
-      navigate("/me");
-    } catch (error) {
-      console.error("Error en el inicio de sesión", error);
+      await axios.post(
+        "https://tasks-smil.onrender.com/api/auth/login",
+        { email, password },
+        { withCredentials: true }
+      );
+      navigate("/tasks");
+    } catch (err) {
+      setError(err.response?.data?.message ?? "Error al iniciar sesión");
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Iniciar sesión</h2>
       <form onSubmit={handleLogin}>
-      <input
+        <input
           type="email"
           placeholder="usuario@ejemplo.com"
           value={email}
@@ -37,6 +42,7 @@ const LoginForm = () => {
           required
         />
         <button type="submit">Iniciar sesión</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     </div>
   );
