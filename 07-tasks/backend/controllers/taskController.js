@@ -17,7 +17,7 @@ exports.createTask = async (req, res) => {
   });
   return res
     .status(201)
-    .json({ message: "Usuario registrado con éxito", newTask });
+    .json({ message: "Tarea registrada con éxito", newTask });
 };
 
 exports.getTasks = async (req, res) => {

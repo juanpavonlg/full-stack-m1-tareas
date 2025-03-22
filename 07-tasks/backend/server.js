@@ -1,6 +1,7 @@
 const express = require("express");
 const { Sequelize } = require("sequelize");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const dbConfig = require("./config/config.json").development;
 const userRoutes = require("./routes/userRoutes");
 const taskRoutes = require("./routes/taskRoutes");
@@ -18,6 +19,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(cookieParser());
 app.use("/api/auth/", userRoutes);
 app.use("/api/tasks/", taskRoutes);
 

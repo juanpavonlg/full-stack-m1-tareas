@@ -24,10 +24,11 @@ exports.loginUser = async (req, res) => {
   }
   const token = jwt.sign(
     { id: user.id, email: user.email },
-    process.env.SECRET_KEY,
+    process.env.SECRET_KEY || "secret",
     { expiresIn: process.env.TOKEN_EXPIRATION ?? "1h" }
   );
-  return res.status(200).json({ token: token });
+  res.cookie("token", token, { httpOnly: true, secure: true });
+  return res.status(200).json({ message: "Autenticación exitosa", email });
 };
 
 exports.meUser = async (req, res) => {
