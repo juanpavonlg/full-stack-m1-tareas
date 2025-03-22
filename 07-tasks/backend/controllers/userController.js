@@ -27,7 +27,7 @@ exports.loginUser = async (req, res) => {
     process.env.SECRET_KEY || "secret",
     { expiresIn: process.env.TOKEN_EXPIRATION ?? "1h" }
   );
-  res.cookie("token", token, { httpOnly: true, secure: true });
+  res.cookie("token", token, { httpOnly: true, sameSite: "none", secure: true });
   return res.status(200).json({ message: "Autenticación exitosa", email });
 };
 
